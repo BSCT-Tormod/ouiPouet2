@@ -1,4 +1,4 @@
-var cpt = 100000;
+var cpt = 0;
 var progressBarLength = 4;
 var progressBar = document.querySelector(".progress-bar");
 var btnAchat = document.querySelector(".btn-achat");
@@ -16,10 +16,27 @@ var cardsOwned = [];
 var sCardsOwned = [];
 var ssCardsOwned = [];
 
+var reveal = false;
+
 console.log("hello world le programme");
+////// Change la couleur de l'ombre tout seul (comme un grand)
+window.i = 0;
+setInterval(() => {
+    window.i += 1;
+    document.querySelector(".game").style.boxShadow = "0 0 75px "+autoHue();
+    document.querySelector(".btn-achat").style.boxShadow = "0 0 75px "+autoHue();
+    document.querySelector(".collectable-text").style.WebkitTextStrokeColor = autoHue();
+    document.querySelector(".collectable-desc").style.WebkitTextStrokeColor = autoHue();
+}, 200);
+//////
 document.querySelector(".game").onclick = function(){
     if(this.style.cursor != "wait"){
         increment()
+    }
+};
+document.querySelector("body").onclick = function(){
+    if (reveal == true){
+        pickACard(1);
     }
 };
 document.querySelector("#achat-picks-up").onclick = function(){achatPicksUp()};
@@ -40,14 +57,6 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-////// Change la couleur de l'ombre tout seul (comme un grand)
-window.i = 0;
-setInterval(() => {
-    window.i += 1;
-    document.querySelector(".game").style.boxShadow = "0 0 75px "+autoHue();
-    document.querySelector(".btn-achat").style.boxShadow = "0 0 75px "+autoHue();
-}, 200);
-//////
 
 async function increment(){
     cpt+=1;
@@ -304,45 +313,58 @@ function tirage(){
 }
 
 // appellée dans tirage() permet de lancer l'interface de piochage
-async function pickACard(){
-    if (isPicked == 0){ // La carte est piochée face cachée
-        document.querySelector(".radial-light").style.visibility = "hidden";
-        document.querySelector(".picked-card").src = "./images/cards/back.png";
-        document.querySelector(".picked-card-container").style.visibility = "visible";
-        document.querySelector(".picked-card").style.visibility = "visible";
-        isPicked = 1;        
-    } else if(isPicked == 1){ // La carte est retournée
-        
-        var randomInt = getRandomIntInclusive(0, 15);
-
+async function pickACard(param){
+    if (param == 0){ // Un item est tiré puis affiché
+        var randomInt = getRandomIntInclusive(0, 25); // Total des collectables dans le 2eme paramètre de g
         numberToCollectable(randomInt)
-            .then(async collectable => {            
-              
-              var img = "./images/collectables/"+collectable.img;    //////// Nombre de cartes super secretes
+            .then(async collectable => {
+                var img = "./images/collectables/"+collectable.img;
+                document.querySelector(".radial-light").style.visibility = "hidden";
                 document.querySelector(".picked-card").src = img;
+                document.querySelector(".picked-card").style.top = "50%";
                 document.querySelector(".picked-card").style.visibility = "visible";
+                await sleep(700);
+                document.querySelector(".picked-card").style.filter = "brightness(100%)";
                 document.querySelector(".radial-light").style.visibility = "visible";
-                if(nbTirages > 1){
-                    nbTirages--;
-                    isPicked = 2;
-                } else {
-                    isPicked = 100;
-                }
+                document.querySelector(".radial-light").style.filter = "opacity(100%)";
+                document.querySelector(".picked-card-container").style.cursor = "pointer";
+                document.querySelectorAll(".picked-card-container > *").forEach(element => {
+                    element.style.cursor = "pointer";
+                });
+                document.querySelector(".picked-card-container").style.visibility = "visible";
+                await sleep(300);
+                document.querySelector(".collectable-text").innerHTML = collectable.name;
+                document.querySelector(".collectable-text").style.top = "10%";
+                await sleep(100);
+                document.querySelector(".collectable-desc").innerHTML = collectable.description;
+                document.querySelector(".collectable-desc").style.bottom = "10%";
+                reveal = true;
+                nbTirages -= 1;
             })
             .catch(error => {
-              console.error('Erreur lors de l appel à numberToCollectable :', error);
+                console.error('Erreur lors de l appel à numberToCollectable :', error);
             });
-    } else if(isPicked == 2) { // la carte est cachée
-        isPicked = 0;           
-        pickACard();
-    } else { // la carte est cachée
-        document.querySelector(".picked-card-container").style.visibility = "hidden";
-        document.querySelector(".picked-card").style.visibility = "hidden";
+    } else if(param == 1){ // l'item est recaché
+        document.querySelector(".collectable-text").style.top = "-10%";
+        document.querySelector(".collectable-desc").style.bottom = "-10%";
+        document.querySelector(".radial-light").style.filter = "opacity(0%)";
         document.querySelector(".radial-light").style.visibility = "hidden";
-        isPicked = 0;        
-        save();
+        await sleep(500);
+        document.querySelector(".picked-card").style.top = "-50%";
+        document.querySelector(".picked-card").style.visibility = "hidden";
+        document.querySelector(".picked-card").style.filter = "brightness(0%)";
+        document.querySelector(".picked-card-container").style.visibility = "hidden";
+        await sleep(500);
+        document.querySelector(".picked-card").style.top = "100%";
+        reveal = false;
+        if(nbTirages > 0){
+            console.log(nbTirages);
+            await sleep(500);
+            pickACard(0);
+        }
     }
 }
+
 
 // donne un entier aléatoire
 function getRandomIntInclusive(min, max) {
@@ -540,15 +562,15 @@ radioButtons.forEach((radioButton) => {
     // Vérifiez si le bouton radio est sélectionné
     if (radioButton.checked) {
         let data = radioButton.id.split("-")[1];
-        let tirage = data.split("/")[0];
+        nbTirages = data.split("/")[0];
         let prix = data.split("/")[1];
         if(cpt < prix){
             window.alert("Nombre de Pouets insuffisant");
         } else {
             cpt -= prix;
             document.querySelector(".btn-achat").innerHTML = cpt + " Pouets !";
-            isPicked = 1;
-            pickACard();
+            isPicked = 0;
+            pickACard(0);
                   }
               }
           });

@@ -22,7 +22,7 @@
             "name":"Oui Pouet 2",
             "description":"Toutes les bonnes choses ont une suite",
             "value": 250000,
-            "img": "ouipouet.png"
+            "img": "ouipouet2.png"
         },
         "4":{
             "name":"Un conifere",
@@ -106,7 +106,7 @@
             "name":"Biscotte",
             "description":"Douce et craquante à la fois",
             "value":2600,
-            "img": "bisotte.png"
+            "img": "biscotte.png"
         },
         "18":{
             "name":"Boule de pétanque",
@@ -131,6 +131,30 @@
             "description":"Le célèbre reporter belge",
             "value":650,
             "img": "tintin.png"
+        },
+        "22":{
+            "name":"Cannette de Redbull",
+            "description":"Redbull donne des ailes",
+            "value":850,
+            "img": "redbull.png"
+        },
+        "23":{
+            "name":"Flan",
+            "description":"Il gigote, il gigote le petit flan",
+            "value":300,
+            "img": "flan.png"
+        },
+        "24":{
+            "name":"Moteur V8",
+            "description":"Vroum vroum les bagnoles",
+            "value":800,
+            "img": "v8.png"
+        },
+        "25":{
+            "name":"Porte avant gauche de clio 2",
+            "description":"C'est une porte pour la clio 2",
+            "value":2000,
+            "img": "porteclio.png"
         }
     }
 
