@@ -1,0 +1,137 @@
+{
+    "collectables" : {
+        "0" : {
+            "name" : "Oui",
+            "description" : "Oui",
+            "value": 500000,
+            "img": "oui.png"
+        },
+        "1" : {
+            "name" : "Pouet",
+            "description" : "Pouet Pouet c'est rigolo",
+            "value": 500000,
+            "img": "pouet.png"
+        },
+        "2":{
+            "name":"Oui Pouet",
+            "description":"C'est la base, l'équilibre parfait entre le oui et le pouet",
+            "value": 1000000,
+            "img": "ouipouet.png"
+        },
+        "3":{
+            "name":"Oui Pouet 2",
+            "description":"Toutes les bonnes choses ont une suite",
+            "value": 250000,
+            "img": "ouipouet.png"
+        },
+        "4":{
+            "name":"Un conifere",
+            "description":"C'est un bien bel arbre !",
+            "value":2000,
+            "img": "conifere.png"
+        },
+        "5":{
+            "name":"Croque monsieur",
+            "description":"Un délicieux sandwich au jambon et au fromage",
+            "value":500,
+            "img": "croquemonsieur.png"
+        },
+        "6":{
+            "name":"Charente maritime",
+            "description":"C'est le departement numéro 17",
+            "value":1700,
+            "img": "charentemaritime.png"
+        },
+        "7":{
+            "name":"Une saucisse",
+            "description":"On vis dans une saucisse",
+            "value":69000,
+            "img": "saucisse.png"
+        },
+        "8":{
+            "name":"Velouté poireaux pommes de terre",
+            "description":"La bonne soupasse pour l'hiver !",
+            "value":100,
+            "img": "veloute.png"
+        },
+        "9":{
+            "name":"Moai",
+            "description":"La statue préférée des gigas chads",
+            "value":15000,
+            "img": "moai.png"
+        },
+        "10":{
+            "name":"Pierre Gasly",
+            "description":"Pilote de F1 pour Alpine",
+            "value":1000,
+            "img": "gasly.png"
+        },
+        "11":{
+            "name":"Fiche de déclaration d'impots 2022",
+            "description":"Oublie pas hein",
+            "value":2022,
+            "img": "impots.png"
+        },
+        "12":{
+            "name":"12",
+            "description":"12",
+            "value":12,
+            "img": "12.png"
+        },
+        "13":{
+            "name":"Pigeon",
+            "description":"RRRRRRRRROOOUUUUUUUUUUU",
+            "value":6500,
+            "img": "pigeon.png"
+        },
+        "14":{
+            "name":"Fernando Alonso",
+            "description":"Pilote F1 pour Aston Martin",
+            "value":14000,
+            "img": "alonso.png"
+        },
+        "15":{
+            "name":"Thirry Beccaro",
+            "description":"Le seul et unique présentateur de motus !",
+            "value":3500,
+            "img": "beccaro.png"
+        },
+        "16":{
+            "name":"Boeuf bourguignon",
+            "description":"Un plat traditionnel de la cuisine française, hmmm",
+            "value":450,
+            "img": "boeufbourguignon.png"
+        },
+        "17":{
+            "name":"Biscotte",
+            "description":"Douce et craquante à la fois",
+            "value":2600,
+            "img": "bisotte.png"
+        },
+        "18":{
+            "name":"Boule de pétanque",
+            "description":"C'est l'heure de la pétanque !",
+            "value":1000,
+            "img": "boulepetanque.png"
+        },
+        "19":{
+            "name":"Extincteur",
+            "description":"Pshhhhhhhh",
+            "value":999,
+            "img": "extincteur.png"
+        },
+        "20":{
+            "name":"Toyota Prius",
+            "description":"This is a... TOYOTA",
+            "value":2300,
+            "img": "prius.png"
+        },
+        "21":{
+            "name":"Tintin",
+            "description":"Le célèbre reporter belge",
+            "value":650,
+            "img": "tintin.png"
+        }
+    }
+
+}
