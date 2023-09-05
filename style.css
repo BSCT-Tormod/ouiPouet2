@@ -1,0 +1,425 @@
+@media screen and (max-width: 1024px) { /* Phone */
+    .game-container{
+        height: 100%;
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .panel{
+        width: auto;
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        margin: 5% 5%;
+        justify-content: space-between;
+    }
+    .panel-button{
+        vertical-align: middle;
+        width: 45%;
+        background-color: rgba(0, 0, 0, 0.808);
+        border: 5px solid #fff;
+        color : #fff;
+        font-family: 'Comic sans ms';
+        font-size: 200%;
+        box-shadow: 0 0 80px rgb(255, 0, 200);
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+    }
+    #load-input{
+        width: 75%;
+        height: 20%;
+        margin: auto;
+    }
+    #drop-display{
+        height: auto;
+        width: 100%;
+        margin: auto;
+    }
+    .interface{
+        height: 60%;
+        width: 95%;
+        display:flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .btn-collection{
+        margin: auto;
+    }
+    .btn-load p{
+        height: 100%;
+        margin: 5% auto;
+    }
+    .btn-load{
+        display: flex;
+        height: 50%;
+        gap: 5%;
+    }
+    #save{
+        display: flex;
+        flex-direction: column;
+    }
+    .progress-bar{
+        height: 150px;
+        max-width: 100%;
+        width: 0%;
+        left: 0;
+        bottom: 0;
+        background-color: #B87333;
+        position: fixed;
+        transition: all .5s ease 0s;
+    }
+    .picked-card-container{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1043/1465;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        visibility: hidden;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .picked-card{
+        position: relative;
+        max-width: 90%;
+        width: auto;
+        height: auto;
+        margin: 5% 0;
+        visibility: hidden;
+    }
+    .radial-light{
+        position: fixed;
+        animation: spin 30s linear infinite;
+        visibility: hidden;
+        width: 200%;
+        margin: -30% 0;
+        
+    }
+    .collection-frame{
+        position: absolute;
+        width: 95%;
+        height: 87%;
+        margin: 7.5% 2.5%;
+        display: flex;
+        flex-direction: row;
+        visibility: hidden;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        width: 47%;
+        height: auto;
+        order: unset; 
+    }
+    .cookie-pop-up{
+        position: absolute;
+        width: 65%;
+        height: auto;
+        margin: 5.5% 12.5%;
+        padding: 2% 5%;
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        justify-content: space-between;
+    overflow: hidden;
+    background-color: #d69b1b;
+    font-family: 'Comic sans ms';
+    overflow-y: auto;
+}
+.styled {
+    min-height: 150px;
+    height: 100%;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+}
+@media screen and (min-width: 1024px) { /* Desktop */
+    .game-container{
+        height: 100%;
+        width: 100%;
+        display:flex;
+        flex-direction: row;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .panel{
+        width: 25%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        margin: 5% 5%;
+        justify-content: space-between;
+    }
+    .panel-button{
+        vertical-align: bottom;
+        background-color: rgba(0, 0, 0, 0.808);
+        border: 5px solid #fff;
+        color : #fff;
+        font-family: 'Comic sans ms';
+        font-size: 200%;
+        padding: 20% 0;
+        box-shadow: 0 0 80px rgb(255, 0, 200);
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        gap: 10%;
+    }
+    #load-input{
+        width: 75%;
+        margin-left: 12.5%;
+    }
+    #drop-display{
+        height: 40%;
+        padding: 10% 0;
+        margin-top: 25%;
+    }
+    .interface{
+        height: 100%;
+        width: 50%;
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .progress-bar{
+        height: 50px;
+        max-width: 100%;
+        width: 0%;
+        left: 0;
+        bottom: 0;
+        background-color: #B87333;
+        position: fixed;
+        transition: all .5s ease 0s;
+    }
+    .picked-card-container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        visibility: hidden;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .picked-card{
+        position: absolute;
+        max-height: 1000px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        visibility: hidden;
+    }
+    .radial-light{
+        position: fixed;
+        animation: spin 30s linear infinite;
+        visibility: hidden;
+        width: auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+.collection-frame{
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    margin: 7.5% 12.5%;
+    display: flex;
+    flex-direction: row;
+    visibility: hidden;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    order: unset; 
+}
+.cookie-pop-up{
+    position: absolute;
+    width: 65%;
+    height: 65%;
+    margin: 5.5% 12.5%;
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #d69b1b;
+    font-family: 'Comic sans ms';
+    overflow-y: auto;
+    
+}
+.styled {
+    height: 100%;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+}
+.background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("./images/bg.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    touch-action: manipulation;
+    overflow: hidden;
+    user-select: none;
+}
+.btn-achat{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    color: #969696;
+    border: 5px solid #969696;
+    font-family: 'Comic sans ms';
+    font-size: 30px;
+    padding: 5% 0;
+    margin-top: 5%;
+    transition: all .5s ease 0s;
+    box-shadow: 0 0 80px rgb(255, 0, 200);
+}
+.game{
+    height: 100%;
+    width: 100%;
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: 0 0 80px rgb(255, 0, 200);
+    margin: 10% auto;
+    transition: all .5s ease 0s;
+}
+.pouet-display{
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Comic sans ms';
+    text-align: center;
+    font-size: 42px;
+}
+.clicker{
+    height: 70%;
+    width: 70%;
+    text-align: center;
+    margin: 5% 15%;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.collection-container{
+    height: auto;
+    width: 100%;
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.425);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: 0 0 80px rgb(255, 0, 200);
+    transition: all .5s ease 0s;
+}
+.collection-container h2{
+    font-family: 'Comic sans ms';
+    color: #fff;
+    margin: 0, 50%;
+}
+.affichage-collection{
+    display : flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 2.5% 0%;
+    overflow-y: scroll;
+}
+.collection-header{
+    display: flex;
+    justify-content: space-around;
+}
+.collection-container h2{
+    width: 50%;
+}
+.collection-partir{
+    font-family: 'Comic sans ms';
+    color: #fff;
+}
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+#shop{
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* CSS WINDOWS 7 */
+.window::before{
+    left: 0;
+}
+
